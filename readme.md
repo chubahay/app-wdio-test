@@ -1,6 +1,5 @@
 <h1>This is a webdriverio framework for running ui tests via a selenium grid</h1>
 
-
 <h2>Getting started</h2>
 
 ```````docker-compose up```````
