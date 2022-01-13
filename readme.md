@@ -12,6 +12,7 @@ your selenium hub can be found -> http://localhost:4444/ui/index.html#/
 To run on chrome (defaiult);
 
 ```````npm run test```````
+
 ```````npm run test -- --browser="chrome"```````
 
 To run on edge;
@@ -19,4 +20,5 @@ To run on edge;
 ```````npm run test -- --browser="edge"```````
 
 To run on firefox;
+
 ```````npm run test -- --browser="firefox"```````
