@@ -7,7 +7,7 @@
 
 your selenium hub can be found -> http://localhost:4444/ui/index.html#/
 
-<h2>RUN commands</h2>
+<h2>Run commands</h2>
 
 To run on chrome (default);
 
