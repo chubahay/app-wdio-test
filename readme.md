@@ -1,22 +1,22 @@
+<h1>This is a selenium based framework for running ui tests via a selenium grid</h1>
 
 
+<h2>Getting started</h2>
 
-Getting started
-
-docker-compose up
+```````docker-compose up```````
 
 your selenium hub can be found -> http://localhost:4444/ui/index.html#/
 
-RUN commands
+<h2>RUN commands</h2>
 
-Chrome runs by default
+To run on chrome (defaiult);
 
-npm run test
-npm run test -- --browser="chrome"
+```````npm run test```````
+```````npm run test -- --browser="chrome"```````
 
 To run on edge;
 
-npm run test -- --browser="edge"
+```````npm run test -- --browser="edge"```````
 
 To run on firefox;
-npm run test -- --browser="firefox"
+```````npm run test -- --browser="firefox"```````
