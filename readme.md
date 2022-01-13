@@ -9,7 +9,7 @@ your selenium hub can be found -> http://localhost:4444/ui/index.html#/
 
 <h2>RUN commands</h2>
 
-To run on chrome (defaiult);
+To run on chrome (default);
 
 ```````npm run test```````
 
@@ -22,3 +22,7 @@ To run on edge;
 To run on firefox;
 
 ```````npm run test -- --browser="firefox"```````
+
+To run via wdio's wdio-docker-service;
+
+```````npm run test-wdio-docker```````
