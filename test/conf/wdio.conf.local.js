@@ -85,9 +85,9 @@ exports.config = {
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
     // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
     // gets prepended directly.
-    hostname: 'localhost',
+    hostname: 'selenium-hub',
     port: 4444,
-    path: '/',
+    path: '/wd/hub',
     //
     // Default timeout for all waitFor* commands.
     waitforTimeout: 10000,
