@@ -50,5 +50,25 @@ const capabilityOpts = args => {
     } return capabilities;
 }
 
-exports.capabilityOpts = capabilityOpts;
+const confSetup = args => {
 
+    const docker = {
+        hostname: 'selenium-hub',
+        port: 4444,
+        path: '/wd/hub'
+    }
+
+    const local = {
+        hostname: 'localhost',
+        port: 4444,
+        path: '/'
+    }
+
+    let run = (args === 'docker') ? docker : local
+    console.log(run)
+
+    return run;
+}
+
+exports.capabilityOpts = capabilityOpts;
+exports.confSetup = confSetup;
