@@ -31,6 +31,6 @@ To specify the host port and path in command line, use setup.js and --run="docke
 
 You can view the test run once all containers are running by removing the headless option and using VNC viewer 
 
-Chrome  - localhost:5900 
-Edge - localhost:5901 
-Firefox - localhost:5902 
+<li>Chrome  - localhost:5900</li>
+<li>Edge - localhost:5901 </li>
+<li>Firefox - localhost:5902 </li>
