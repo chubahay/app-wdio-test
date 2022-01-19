@@ -1,4 +1,5 @@
-const capabilityOpts = require('../capabilities/capabilities');
+const capabilityOpts = require('../setup/setup');
+const allure = require('allure-commandline')
 const args = require('minimist')(process.argv.slice(2))
 
 
@@ -85,9 +86,9 @@ exports.config = {
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
     // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
     // gets prepended directly.
-    hostname: 'selenium-hub',
+    hostname: 'localhost',
     port: 4444,
-    path: '/wd/hub',
+    path: '/',
     //
     // Default timeout for all waitFor* commands.
     waitforTimeout: 10000,
@@ -103,7 +104,7 @@ exports.config = {
     // Services take over a specific job you don't want to take care of. They enhance
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
-    
+
     //services: ['chromedriver'],
 
     // Framework you want to run your specs with.
@@ -127,9 +128,6 @@ exports.config = {
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
     reporters: ['spec'],
-
-
-
     //
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
@@ -151,6 +149,7 @@ exports.config = {
      * @param {Array.<Object>} capabilities list of capabilities details
      */
     onPrepare: function (config, capabilities) {
+        //generate the capabilities and push them into an array
         capabilities.push(capabilityOpts.capabilityOpts(args['browser']))
     },
     /**
@@ -172,8 +171,12 @@ exports.config = {
      * @param {Array.<String>} specs List of spec file paths that are to be run
      * @param {String} cid worker id (e.g. 0-0)
      */
-    // beforeSession: function (config, capabilities, specs, cid) {
-    // },
+    beforeSession: function (config, capabilities, specs, cid) {
+        //setup config
+        config.hostname = capabilityOpts.confSetup(args['run']).hostname
+        config.port = capabilityOpts.confSetup(args['run']).port
+        config.path = capabilityOpts.confSetup(args['run']).path
+    },
     /**
      * Gets executed before test execution begins. At this point you can access to all global
      * variables like `browser`. It is the perfect place to define custom commands.
@@ -260,8 +263,7 @@ exports.config = {
      * @param {Array.<Object>} capabilities list of capabilities details
      * @param {<Object>} results object containing test results
      */
-    // onComplete: function(exitCode, config, capabilities, results) {
-    // },
+    // onComplete: function() {}
     /**
     * Gets executed when a refresh happens.
     * @param {String} oldSessionId session ID of the old session

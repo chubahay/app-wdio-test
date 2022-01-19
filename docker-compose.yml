@@ -2,7 +2,8 @@ version: "3"
 services:
   app:
     build: .
-    command: npm run test
+    command:
+      sh -c "npm run test -- --host selenium-hub --browser chrome && npm run test -- --host selenium-hub --browser firefox && npm run test -- --host selenium-hub --browser edge"     
     depends_on:
       - chrome
       - edge

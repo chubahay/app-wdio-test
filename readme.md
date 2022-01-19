@@ -25,3 +25,12 @@ To run on firefox;
 To run via wdio's wdio-docker-service;
 
 ```````npm run test-wdio-docker```````
+
+
+To specify the host port and path in command line, use setup.js and --run="docker" in the args
+
+You can view the test run once all containers are running by removing the headless option and using VNC viewer 
+
+Chrome  - localhost:5900 
+Edge - localhost:5901 
+Firefox - localhost:5902 
